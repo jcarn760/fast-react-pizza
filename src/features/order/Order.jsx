@@ -12,7 +12,6 @@ import UpdateOrder from "./UpdateOrder";
 
 function Order() {
   const order = useLoaderData();
-
   const fetcher = useFetcher();
 
   useEffect(() => {
