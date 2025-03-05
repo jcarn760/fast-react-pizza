@@ -30,6 +30,8 @@ function Order() {
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
+  const totalPrice = Math.round((orderPrice + priorityPrice) * 100) / 100;
+
   return (
     <div className="space-y-8 px-4 py-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -82,7 +84,7 @@ function Order() {
           </p>
         )}
         <p className="font-bold">
-          To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
+          To pay on delivery: {formatCurrency(totalPrice)}
         </p>
       </div>
 

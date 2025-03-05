@@ -10,6 +10,8 @@ const cartSlice = createSlice({
   reducers: {
     addItem(state, action) {
       // payload = newItem
+      const newItem = action.payload;
+      newItem.totalPrice = newItem.quantity * newItem.unitPrice;
       state.cart.push(action.payload);
     },
     deleteItem(state, action) {
